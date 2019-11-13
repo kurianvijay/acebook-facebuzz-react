@@ -1,10 +1,11 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import SignupForm from './components/SignupForm';
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
     <div className="App">
-      <SignupForm />
+      <Sidebar />
     </div>
   );
 }

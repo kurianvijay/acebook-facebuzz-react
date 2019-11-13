@@ -6,10 +6,10 @@ class SignupForm extends Component {
 
     this.state = {
       firstName: '',
-      // lastName: '',
-      // username: '',
-      // password: '',
-      // confirmPassword: '',
+      lastName: '',
+      username: '',
+      password: '',
+      confirmPassword: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
