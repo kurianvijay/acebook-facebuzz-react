@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import SignupForm from './components/signup';
+import CommentsContainer from './components/commentsContainer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           Learn React
         </a>
         <SignupForm />
+        <CommentsContainer/>
       </header>
     </div>
   );
