@@ -7,14 +7,14 @@ class Posts extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      feed: []
+      feed: [<Post/>]
     }
   }
 
   render(){
     return (
       <div className="Posts">
-        <Post/>
+        {this.state.feed}
         <PostForm/>
        </div>
     )
