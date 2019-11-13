@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+
 }
 
 .App-logo {
@@ -19,4 +19,33 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+/* Melvin's styles */
+
+.comment-author {
+  font-weight: 700;
+}
+
+.comment-meta {
+  font-size: 0.8em;
+  color: #9B9B9B;
+}
+
+.comment-message {
+  width: 100%;
+  resize: none;
+}
+
+.comment-container {
+  background-color: #333333;
+  border-radius: 5px;
+  padding: 10px 12px;
+}
+
+input, textarea {
+   font-size: 1rem;
+   padding: 10px;
+   margin: 0 0 10px 0;
+   border-radius: 5px;
 }

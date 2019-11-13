@@ -13,7 +13,10 @@ class CommentForm extends React.Component {
         <div className="col-12">
           <form>
             <input name="message" type="text"/>
-            <button> Add Comment</button>
+            <br />
+            <div className="text-right m-1">
+              <button className="btn btn-primary"> Add Comment</button>
+            </div>
           </form>
         </div>
       </div>

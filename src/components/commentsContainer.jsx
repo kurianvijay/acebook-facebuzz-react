@@ -1,5 +1,6 @@
 import React from 'react';
 import Comment from './comment';
+import CommentForm from './commentForm'
 
 class CommentsContainer extends React.Component {
 
