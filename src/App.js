@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import SignupForm from './components/signup';
+import SignupForm from './components/Signup';
+import Posts from './components/Posts';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           Learn React
         </a>
         <SignupForm />
+        <Posts/>
       </header>
     </div>
   );
