@@ -17,6 +17,18 @@ function Posts() {
         <p>This is a post</p>
       </div>
       <br />
+      <div class='post'>
+        <p>This is a post</p>
+      </div>
+      <br />
+      <div class='post'>
+        <p>This is a post</p>
+      </div>
+      <br />
+      <div class='post'>
+        <p>This is a post</p>
+      </div>
+      <br />
     </div>
   );
 }
