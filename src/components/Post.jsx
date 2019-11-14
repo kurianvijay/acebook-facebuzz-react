@@ -23,10 +23,30 @@ class Post extends React.Component{
             'Accept': 'application/json'
           },
         })
-        .then (response => console.log(response))
+        .then(response => console.log(response))
         .then(this.props.getFeed)
   }
-  
+
+  // editPost() {
+  //
+  //   fetch('/api/posts', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Accept': 'application/json'
+  //     },
+  //     body: JSON.stringify({
+  //       // title: 'Placeholder title',
+  //       message: this.state.message,
+  //       user_id: this.state.user_id
+  //     }),
+  //   })
+  //   .then(response => console.log(response))
+  //   .then(this.props.getFeed)
+  //   .then(this.resetForm)
+  //
+  // }
+
   render() {
     return (
       <div className="row mb-1 mt-3">
