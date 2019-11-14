@@ -70,8 +70,6 @@ class Post extends React.Component{
       postDisplay = this.postHTMLDisplay()
     }
 
-    console.log(postDisplay)
-
     return (
       <div>{postDisplay}</div>
     )
