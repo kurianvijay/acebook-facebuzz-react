@@ -3,18 +3,19 @@ import React, { Component } from 'react';
 import SignInForm from './SignInForm';
 //import { Test } from './Navbar.styles';
 
-class Navbar extends Component { 
+class Navbar extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       hasError: false,
       hasSession: false,
-      loginVisible:
+      loginVisible: true
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.logout = this.logout.bind(this);
   }
+
 
   // componentWillMount = () => {
   //   console.log('Navbar will mount');
@@ -40,13 +41,13 @@ class Navbar extends Component {
   //   console.log('Navbar will unmount');
   // }
 
-  handleSubmit(event){
+  handleSubmit(event) {
     event.preventDefault()
     this.setState({hasSession: true})
     console.log('hello')
   }
 
-  logout(event){
+  logout(event) {
     event.preventDefault()
     this.setState({hasSession: false})
     console.log('bye')
@@ -61,7 +62,7 @@ class Navbar extends Component {
         <div className="NavbarWrapper">
           <nav className="navbar navbar-expand-md navbar-dark bg-secondary">
           <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-            <ul className="navbar-nav mr-auto">     
+            <ul className="navbar-nav mr-auto">
               <li className="badge badge-pill badge-secondary text-light">
                 <h1>aceBook</h1>
               </li>
@@ -70,7 +71,7 @@ class Navbar extends Component {
           <div className="mx-auto order-0">
             <div className="navbar-brand mx-auto">
               {/* <a className="badge badge-pill badge-secondary text-light" href="#">
-                Placeholder for left hand side of navbar 
+                Placeholder for left hand side of navbar
               </a> */}
             </div>
           </div>
@@ -93,7 +94,7 @@ class Navbar extends Component {
         <div className="NavbarWrapper">
           <nav className="navbar navbar-expand-md navbar-dark bg-secondary">
           <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-            <ul className="navbar-nav mr-auto">     
+            <ul className="navbar-nav mr-auto">
               <li className="badge badge-pill badge-secondary text-light">
                 <h1>aceBook</h1>
               </li>
@@ -102,7 +103,7 @@ class Navbar extends Component {
           <div className="mx-auto order-0">
             <div className="navbar-brand mx-auto">
               {/* <a className="badge badge-pill badge-secondary text-light" href="#">
-                Placeholder for left hand side of navbar 
+                Placeholder for left hand side of navbar
               </a> */}
             </div>
           </div>

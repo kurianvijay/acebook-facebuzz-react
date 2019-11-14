@@ -9,9 +9,9 @@ class PostForm extends React.Component{
   render(){
     return(
       <form>
-        <input name='message' type='text'/>
+        <input name='message' type='text' />
         <br />
-        <button className="btn btn-primary"> Add Post</button>
+        <button className="btn btn-primary">Add Post</button>
       </form>
     )
   }
