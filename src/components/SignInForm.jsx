@@ -47,17 +47,19 @@ class SignInForm extends Component {
     })
   }
 
-  handleSubmit(event){
+  // handleSubmit(event){
+  //   event.preventDefault()
+  //   console.log(this.state.email + " " + this.state.password)
+  // }
+
+  handleClick(event){
     event.preventDefault()
-    console.log(this.state.email + " " + this.state.password)
-
-  }
-
-  handleClick(){
     if (this.state.password_field === "password"){
       this.setState({password_field: "text"})
+      console.log('hide')
     } else {
       this.setState({password_field: "password"})
+      console.log('show')
     }
   }
 

@@ -42,11 +42,13 @@ class Navbar extends Component {
   handleSubmit(event){
     event.preventDefault()
     this.setState({hasSession: true})
+    console.log('hello')
   }
 
   logout(event){
     event.preventDefault()
     this.setState({hasSession: false})
+    console.log('bye')
   }
 
   render () {
@@ -60,7 +62,7 @@ class Navbar extends Component {
           <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul className="navbar-nav mr-auto">     
               <li className="badge badge-pill badge-secondary text-light">
-                <h1>faceBuzz</h1>
+                <h1>aceBook</h1>
               </li>
             </ul>
           </div>
@@ -92,7 +94,7 @@ class Navbar extends Component {
           <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul className="navbar-nav mr-auto">     
               <li className="badge badge-pill badge-secondary text-light">
-                <h1>faceBuzz</h1>
+                <h1>aceBook</h1>
               </li>
             </ul>
           </div>
