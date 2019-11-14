@@ -4,6 +4,11 @@ class Comment extends React.Component {
 
   constructor(props) {
     super(props)
+    this.state = {
+      userName: "Melvin Lau",
+      comment: "This is my first comment.",
+      createdAt: "5 Nov 2019 5:05pm"
+    }
 
   }
 
@@ -12,15 +17,14 @@ class Comment extends React.Component {
       <div className="row mb-1 mt-3">
         <div className="col-12">
           <div className="comment-author px-2">
-            Melvin Lau
+            {this.state.userName}
           </div>
           <div className="comment-message px-2 mb-2">
-            This is my first comment.
+            {this.state.comment}
           </div>
           <div className="comment-meta px-2">
-            5 Nov 2019 5:05pm
+            {this.state.createdAt}
           </div>
-
         </div>
       </div>
     )
