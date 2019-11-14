@@ -1,17 +1,47 @@
 import React from 'react';
+import PostForm from './PostForm'
 
 class Post extends React.Component{
   constructor(props){
     super(props)
     this.state = {
+      editMode: false,
     }
     this.postDelete = this.postDelete.bind(this)
-    this.handleClick = this.handleClick.bind(this)
+    this.postEdit = this.postEdit.bind(this)
+    this.handleDeleteClick = this.handleDeleteClick.bind(this)
+    this.handleEditClick = this.handleEditClick.bind(this)
+    this.postHTMLDisplay = this.postHTMLDisplay.bind(this)
   }
 
-  handleClick(event) {
+  postHTMLDisplay() {
+    return (
+      <div className="row mb-1 mt-3">
+          <div className="col-12">
+            <div className="post-author px-2">
+              Written by: {this.props.author}
+            </div>
+            <div className="post-body px-2 mb-2">
+              Content: {this.props.body}
+            </div>
+            <div className="post-timestamp px-2">
+              Written at: {this.props.timestamp}
+            </div>
+            <button type="submit" onClick={this.handleEditClick}> Edit </button>
+            <button onClick={this.handleDeleteClick}> Delete </button>
+          </div>
+        </div>
+    )
+  }
+
+  handleDeleteClick(event) {
     event.preventDefault()
     this.postDelete()
+  }
+
+  handleEditClick(event) {
+    event.preventDefault()
+    this.postEdit()
   }
 
   postDelete() {
@@ -27,43 +57,23 @@ class Post extends React.Component{
         .then(this.props.getFeed)
   }
 
-  // editPost() {
-  //
-  //   fetch('/api/posts', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Accept': 'application/json'
-  //     },
-  //     body: JSON.stringify({
-  //       // title: 'Placeholder title',
-  //       message: this.state.message,
-  //       user_id: this.state.user_id
-  //     }),
-  //   })
-  //   .then(response => console.log(response))
-  //   .then(this.props.getFeed)
-  //   .then(this.resetForm)
-  //
-  // }
+  postEdit() {
+    this.setState({editMode:true})
+  }
+
 
   render() {
+    let postDisplay;
+    if (this.state.editMode) {
+      postDisplay = <PostForm body={this.props.body} postId={this.props.id}/>
+    } else {
+      postDisplay = this.postHTMLDisplay()
+    }
+
+    console.log(postDisplay)
+
     return (
-      <div className="row mb-1 mt-3">
-          <div className="col-12">
-            <div className="post-author px-2">
-              Written by: {this.props.author}
-            </div>
-            <div className="post-body px-2 mb-2">
-              Content: {this.props.body}
-            </div>
-            <div className="post-timestamp px-2">
-              Written at: {this.props.timestamp}
-            </div>
-            <button> Edit </button>
-            <button onClick={this.handleClick}> Delete </button>
-          </div>
-        </div>
+      <div>{postDisplay}</div>
     )
   }
 }
