@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('Post', function () {
+describe('New post', function () {
 
   const url = 'localhost:3000/'
 
@@ -24,7 +24,7 @@ describe('Post', function () {
     cy.get('.post-form textarea').should('have.value', '')
   })
 
-  it('creates a new post in the feed', function () {
+  it('when created, updates the feed', function () {
     cy.get('.post-form textarea').type('Hello test1234abcd')
     cy.get('.post-form button').click()
     cy.get('body').should('have.text', 'Hello test1234abcd')
