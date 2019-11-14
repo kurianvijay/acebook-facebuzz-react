@@ -13,9 +13,9 @@ class Posts extends React.Component {
   }
 
   getFeed() {
+    const url = 'https://acebook-facebuzz-api.herokuapp.com/api/posts';
     fetch(
-      // do the API call
-      'https://jsonplaceholder.typicode.com/posts',
+      url,
       {
         headers: {
           'Accept': 'application/json',
@@ -25,10 +25,14 @@ class Posts extends React.Component {
       }
     )
       .then(
-        response => { return response.json() }
+        response => {
+          console.log(response)
+          return response.json()
+        }
       )
       .then(
         data => {
+          console.log(data)
           this.setState({
             feed: data
           })
@@ -48,10 +52,10 @@ class Posts extends React.Component {
           this.state.feed.map((post) => (
             <Post
               id={post.id}
-              author={post.userId}
-              body={post.body}
-              timestamp='Fake time: 14 November 2019 11am'
-              likes="0"
+              author={post.user_id}
+              body={post.message}
+              timestamp='14 November 2019 11am'
+              likes='0'
             />
           ))
         }
