@@ -1,8 +1,7 @@
 import React from 'react';
-import Navbar from './components/PlaceholderNavbar';
+import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Posts from './components/Posts';
-import Navbar from './components/Navbar';
 import './App.css';
 
 function App() {
