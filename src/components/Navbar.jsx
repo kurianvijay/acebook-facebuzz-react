@@ -43,49 +43,53 @@ class Navbar extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    this.setState({hasSession: true})
+    this.setState({ hasSession: true })
     console.log('hello')
   }
 
   logout(event) {
     event.preventDefault()
-    this.setState({hasSession: false})
+    this.setState({ hasSession: false })
     console.log('bye')
   }
 
-  render () {
+  render() {
     if (this.state.hasError) {
-      return <h1>Something went wrong.</h1>;
+      return (
+        <div className="NavbarWrapper">
+          <h1>Something went wrong.</h1>
+        </div>)
     }
+
     if (this.state.hasSession === false) {
       return (
         <div className="NavbarWrapper">
           <nav className="navbar navbar-expand-md navbar-dark bg-secondary">
-          <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-            <ul className="navbar-nav mr-auto">
-              <li className="badge badge-pill badge-secondary text-light">
-                <h1>aceBook</h1>
-              </li>
-            </ul>
-          </div>
-          <div className="mx-auto order-0">
-            <div className="navbar-brand mx-auto">
-              {/* <a className="badge badge-pill badge-secondary text-light" href="#">
+            <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+              <ul className="navbar-nav mr-auto">
+                <li className="badge badge-pill badge-secondary text-light">
+                  <h1>aceBook</h1>
+                </li>
+              </ul>
+            </div>
+            <div className="mx-auto order-0">
+              <div className="navbar-brand mx-auto">
+                {/* <a className="badge badge-pill badge-secondary text-light" href="#">
                 Placeholder for left hand side of navbar
               </a> */}
+              </div>
             </div>
-          </div>
-          <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            {/* <ul className="navbar-nav ml-auto">
+            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+              {/* <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <a className="badge badge-pill badge-secondary text-light" data-method="delete" href="/users/sign_out"
                   >Logout</a
                 >
               </li>
             </ul> */}
-            <SignInForm handleSubmit={this.handleSubmit}/>
-          </div>
-        </nav>
+              <SignInForm handleSubmit={this.handleSubmit} />
+            </div>
+          </nav>
         </div>
       );
     }
@@ -93,28 +97,28 @@ class Navbar extends Component {
       return (
         <div className="NavbarWrapper">
           <nav className="navbar navbar-expand-md navbar-dark bg-secondary">
-          <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-            <ul className="navbar-nav mr-auto">
-              <li className="badge badge-pill badge-secondary text-light">
-                <h1>aceBook</h1>
-              </li>
-            </ul>
-          </div>
-          <div className="mx-auto order-0">
-            <div className="navbar-brand mx-auto">
-              {/* <a className="badge badge-pill badge-secondary text-light" href="#">
+            <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+              <ul className="navbar-nav mr-auto">
+                <li className="badge badge-pill badge-secondary text-light">
+                  <h1>aceBook</h1>
+                </li>
+              </ul>
+            </div>
+            <div className="mx-auto order-0">
+              <div className="navbar-brand mx-auto">
+                {/* <a className="badge badge-pill badge-secondary text-light" href="#">
                 Placeholder for left hand side of navbar
               </a> */}
+              </div>
             </div>
-          </div>
-          <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            <ul className="navbar-nav ml-auto">
-              <li className="badge badge-pill badge-secondary text-light">
-                <button type="submit" className="btn btn-primary mb-2" onClick={this.logout}>Logout</button>
-              </li>
-            </ul>
-          </div>
-        </nav>
+            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+              <ul className="navbar-nav ml-auto">
+                <li className="badge badge-pill badge-secondary text-light">
+                  <button type="submit" className="btn btn-primary mb-2" onClick={this.logout}>Logout</button>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
       );
     }

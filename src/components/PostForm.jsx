@@ -46,7 +46,7 @@ class PostForm extends React.Component {
 
   render() {
     return (
-      <form>
+      <form className='post-form'>
         <textarea
           name='message'
           value={this.state.message}
