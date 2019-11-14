@@ -47,10 +47,6 @@ class SignInForm extends Component {
     })
   }
 
-  // handleSubmit(event){
-  //   event.preventDefault()
-  //   console.log(this.state.email + " " + this.state.password)
-  // }
 
   handleClick(event){
     event.preventDefault()

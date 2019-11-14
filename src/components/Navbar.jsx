@@ -10,6 +10,7 @@ class Navbar extends Component {
     this.state = {
       hasError: false,
       hasSession: false,
+      loginVisible:
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.logout = this.logout.bind(this);
