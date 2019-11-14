@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './components/PlaceholderNavbar';
-import Sidebar from './components/PlaceholderSidebar';
+import Sidebar from './components/Sidebar';
 import Posts from './components/PlaceholderPosts';
 import './App.css';
 
