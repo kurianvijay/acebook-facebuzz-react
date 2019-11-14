@@ -1,22 +1,44 @@
 .App {
+  height: 100vh;
   text-align: center;
+  display: grid;
+  overflow-y: auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 2fr 5fr auto;
+  grid-template-areas:
+    "Nav  Nav   Nav  "
+    "Side Posts Posts"
+    "Side Posts Posts"
+  ;
+  background-color: whitesmoke;
 }
 
-.App-logo {
-  height: 40vmin;
+nav {
+  grid-area: Nav;
+  justify-self: stretch;
+  width: 100%;
+  background-color: blue;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.sidebar {
+  grid-area: Side;
+  justify-self: stretch;
+  height: 100%;
+  background-color: grey;
 }
 
-.App-link {
-  color: #09d3ac;
+.posts {
+  grid-area: Posts;
+  overflow-y: scroll;
+  justify-self: stretch;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 2em;
+  padding: 2em;
+}
+
+.post {
+  background-color: lightgray;
+  justify-self: stretch;
 }
