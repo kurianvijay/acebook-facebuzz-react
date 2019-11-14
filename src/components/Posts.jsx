@@ -13,9 +13,7 @@ class Posts extends React.Component{
   }
 
   getFeed() {
-    fetch(
-      // do the API call
-      'https://jsonplaceholder.typicode.com/posts',
+    fetch('/api/posts',
       {
         headers: {
           'Accept': 'application/json',
@@ -24,16 +22,8 @@ class Posts extends React.Component{
         method: 'GET',
       }
     )
-    .then(
-      response => { return response.json() }
-    )
-    .then(
-      data => {
-        this.setState({
-          feed: data
-        })
-      }
-    )
+    .then(response => response.json() )
+    .then(data => this.setState({ feed: data }))
   }
 
   componentDidMount() {
@@ -48,9 +38,8 @@ class Posts extends React.Component{
           this.state.feed.map((post) => (
             <Post
               id={post.id}
-              author={post.userId}
-              body={post.body}
-              timestamp='Fake time: 14 November 2019 11am'
+              body={post.message}
+              timestamp={post.created_at}
               likes="0"
             />
           ))

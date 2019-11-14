@@ -7,8 +7,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Sidebar />
+      // <Navbar />
+      // <Sidebar />
       <Posts />
     </div>
   );

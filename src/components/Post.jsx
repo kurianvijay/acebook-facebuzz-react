@@ -6,6 +6,7 @@ class Post extends React.Component{
     this.state = {
     }
   }
+  
   render() {
     return (
       <div className="row mb-1 mt-3">
