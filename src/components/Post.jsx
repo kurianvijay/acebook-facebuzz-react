@@ -6,7 +6,27 @@ class Post extends React.Component{
     this.state = {
     }
   }
-  
+
+  // editPost() {
+  //
+  //   fetch('/api/posts', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Accept': 'application/json'
+  //     },
+  //     body: JSON.stringify({
+  //       // title: 'Placeholder title',
+  //       message: this.state.message,
+  //       user_id: this.state.user_id
+  //     }),
+  //   })
+  //   .then(response => console.log(response))
+  //   .then(this.props.getFeed)
+  //   .then(this.resetForm)
+  //
+  // }
+
   render() {
     return (
       <div className="row mb-1 mt-3">
@@ -20,7 +40,7 @@ class Post extends React.Component{
             <div className="post-timestamp px-2">
               Written at: {this.props.timestamp}
             </div>
-            <button> Edit </button>
+            <button > Edit </button>
             <button> Delete </button>
           </div>
         </div>
