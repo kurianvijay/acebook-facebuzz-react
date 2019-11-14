@@ -2,9 +2,9 @@ import React from 'react';
 import Post from './Post';
 import PostForm from './PostForm'
 
-class Posts extends React.Component{
+class Posts extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       feed: []
@@ -33,7 +33,7 @@ class Posts extends React.Component{
   render() {
     return (
       <div className="Posts">
-        <PostForm />
+        <PostForm getFeed={this.getFeed} />
         {
           this.state.feed.map((post) => (
             <Post

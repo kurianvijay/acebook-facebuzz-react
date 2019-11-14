@@ -2,7 +2,7 @@
   "name": "acebook-facebuzz-react",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "https://acebook-facebuzz-api.herokuapp.com",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "prop-types": "^15.7.2",

@@ -5,6 +5,26 @@ class Post extends React.Component{
     super(props)
     this.state = {
     }
+    this.postDelete = this.postDelete.bind(this)
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(event) {
+    event.preventDefault()
+    this.postDelete()
+  }
+
+  postDelete() {
+      fetch("/api/posts/"+this.props.id, 
+        {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+        })
+        .then (response => console.log(response))
+        .then(this.props.getFeed)
   }
   
   render() {
@@ -21,7 +41,7 @@ class Post extends React.Component{
               Written at: {this.props.timestamp}
             </div>
             <button> Edit </button>
-            <button> Delete </button>
+            <button onClick={this.handleClick}> Delete </button>
           </div>
         </div>
     )
