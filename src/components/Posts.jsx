@@ -33,7 +33,7 @@ class Posts extends React.Component {
   render() {
     return (
       <div className="Posts">
-        <PostForm getFeed={this.getFeed} />
+        <PostForm getFeed={this.getFeed} editMode={false}/>
         {
           this.state.feed.map((post) => (
             <Post

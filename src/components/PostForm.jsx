@@ -6,8 +6,10 @@ class PostForm extends React.Component {
     this.state = {
       message: this.props.body,
       userID: '1',
+      // editMode: false,
     }
 
+    this.sendEditPost = this.sendEditPost.bind(this)
     this.sendPost = this.sendPost.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleClick = this.handleClick.bind(this)
@@ -32,7 +34,8 @@ class PostForm extends React.Component {
       },
       body: JSON.stringify({
         message: this.state.message,
-        user_id: this.state.user_id
+        user_id: this.state.user_id,
+        id: 100
       }),
     })
       .then(response=>console.log(response))
@@ -40,11 +43,35 @@ class PostForm extends React.Component {
       // .then(this.resetForm)
   }
 
+  sendEditPost() {
+    fetch("/api/posts/"+this.props.postId, 
+    {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        message: this.state.message,
+        user_id: this.state.user_id
+      }),
+    })
+      .then(response=>console.log(response))
+      .then(this.props.getFeed)
+  }
+
   resetForm() {
     this.setState({ message: '' })
   }
 
   render() {
+    let formType
+    if (this.props.editMode){
+    formType = (<button className="btn btn-primary" onClick={this.sendEditPost} >Edit Post</button>)
+    } else {
+      formType = (<button className="btn btn-primary" onClick={this.sendPost} >Add Post</button>)
+    }
+
     return (
       <form>
         <textarea
@@ -57,7 +84,7 @@ class PostForm extends React.Component {
         >
         </textarea>
         <br />
-        <button className="btn btn-primary" onClick={this.sendPost} >Add Post</button>
+        {formType}
       </form>
     )
   }

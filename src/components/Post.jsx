@@ -61,11 +61,10 @@ class Post extends React.Component{
     this.setState({editMode:true})
   }
 
-
   render() {
     let postDisplay;
     if (this.state.editMode) {
-      postDisplay = <PostForm body={this.props.body} postId={this.props.id}/>
+      postDisplay = <PostForm body={this.props.body} postId={this.props.id} editMode={true}/>
     } else {
       postDisplay = this.postHTMLDisplay()
     }
