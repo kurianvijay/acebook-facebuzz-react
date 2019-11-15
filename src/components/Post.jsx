@@ -16,7 +16,7 @@ class Post extends React.Component{
 
   postHTMLDisplay() {
     return (
-      <div className="row mb-1 mt-3">
+      <div className="post-item row mb-1 mt-3" id={this.props.id}>
           <div className="col-12">
             <div className="post-author px-2">
               Written by: {this.props.author}
@@ -45,7 +45,7 @@ class Post extends React.Component{
   }
 
   postDelete() {
-      fetch("/api/posts/"+this.props.id, 
+      fetch("/api/posts/"+this.props.id,
         {
           method: 'DELETE',
           headers: {
