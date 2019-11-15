@@ -4,9 +4,10 @@ class PostForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      message: '',
+      message: this.props.body,
       userID: '1',
     }
+
     this.sendPost = this.sendPost.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleClick = this.handleClick.bind(this)
@@ -23,21 +24,20 @@ class PostForm extends React.Component {
   }
 
   sendPost() {
-    const Url = 'https://jsonplaceholder.typicode.com/posts'
-    fetch(Url, {
+    fetch('/api/posts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        title: 'Placeholder title',
-        body: this.state.message,
-        userId: this.state.userID
+        message: this.state.message,
+        user_id: this.state.user_id
       }),
     })
+      .then(response=>console.log(response))
       .then(this.props.getFeed)
-      .then(this.resetForm)
+      // .then(this.resetForm)
   }
 
   resetForm() {
@@ -57,7 +57,7 @@ class PostForm extends React.Component {
         >
         </textarea>
         <br />
-        <button className="btn btn-primary" onClick={this.handleClick} >Add Post</button>
+        <button className="btn btn-primary" onClick={this.sendPost} >Add Post</button>
       </form>
     )
   }
