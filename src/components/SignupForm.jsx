@@ -38,7 +38,7 @@ class SignupForm extends Component {
   render() {
     return (
       // eslint-disable-next-line react/jsx-filename-extension
-      <form onSubmit={this.handleSubmit}>
+      <form className="registration-form" onSubmit={this.handleSubmit}>
         <div className="form-group">
           <input
             type="text"

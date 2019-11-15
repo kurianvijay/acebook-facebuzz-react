@@ -13,7 +13,7 @@
   background-color: whitesmoke;
 }
 
-nav {
+.NavbarWrapper {
   grid-area: Nav;
   justify-self: stretch;
   width: 100%;
