@@ -13,7 +13,9 @@ class Posts extends React.Component {
   }
 
   getFeed() {
-    fetch('/api/posts',
+    const url = 'https://acebook-facebuzz-api.herokuapp.com/api/posts';
+    fetch(
+      url,
       {
         headers: {
           'Accept': 'application/json',
@@ -22,8 +24,9 @@ class Posts extends React.Component {
         method: 'GET',
       }
     )
-    .then(response => response.json() )
+    .then(response => return response.json())
     .then(data => this.setState({ feed: data }))
+
   }
 
   componentDidMount() {
@@ -38,9 +41,10 @@ class Posts extends React.Component {
           this.state.feed.map((post) => (
             <Post
               id={post.id}
+              author={post.user_id}
               body={post.message}
               timestamp={post.created_at}
-              likes="0"
+              likes='0'
             />
           ))
         }

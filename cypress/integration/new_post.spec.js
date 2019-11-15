@@ -1,19 +1,34 @@
 /// <reference types="Cypress" />
 
-describe('Post form', function () {
+describe('New post', function () {
+
+  const url = 'localhost:3000/'
 
   beforeEach(() => {
-    const url = 'localhost:3000/'
     cy.visit(url)
   })
 
-  it('has a submit button', function () {
+  it('form has a submit button', function () {
     cy.get('.post-form')
       .should('have.text', 'Add Post')
   })
 
-  it('has a text-area', function () {
+  it('form has a text-area', function () {
     cy.get('.post-form')
       .should('include.html', 'textarea')
   })
+
+  it('form textarea resets contents after post submitted', function() {
+    cy.get('.post-form textarea').type('Hello')
+    cy.get('.post-form button').click()
+    cy.get('.post-form textarea').should('have.value', '')
+  })
+
+  it('when created, updates the feed', function () {
+    cy.get('.post-form textarea').type('Hello test1234abcd')
+    cy.get('.post-form button').click()
+    cy.get('body').should('have.text', 'Hello test1234abcd')
+  })
+
+
 })

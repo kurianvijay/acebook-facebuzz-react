@@ -4,23 +4,22 @@ import UserProfile from "./UserProfile";
 
 class Sidebar extends Component {
   constructor(props) {
-    super(props);
-
-    this.state = {
-      user: { firstName: "John", lastName: "Doe" }
-    };
+    super(props)
   }
 
   render() {
-    return (
-      <div classNameName="SidebarWrapper">
+    if (this.props.isLoggedIn) {
+      return (
         <UserProfile
-          firstName={this.state.user.firstName}
-          lastName={this.state.user.lastName}
+          firstName={this.props.user.firstName}
+          lastName={this.props.user.lastName}
         />
-        <SignupForm />
-      </div>
-    );
+      )
+    } else {
+      return (
+        <SignupForm handleSignUp={this.props.handleSignUp} />
+      )
+    }
   }
 }
 

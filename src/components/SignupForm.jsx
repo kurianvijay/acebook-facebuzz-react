@@ -23,16 +23,13 @@ class SignupForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(
-      `${this.state.firstName} ${this.state.lastName} ${this.state.email} ${this.state.username} ${this.state.password} ${this.state.confirmPassword}`,
+    this.props.handleSignUp(
+      this.state.firstName,
+      this.state.lastName,
+      this.state.username,
+      this.state.password,
+      this.state.confirmPassword
     );
-    this.setState({
-      firstName: '',
-      lastName: '',
-      username: '',
-      password: '',
-      confirmPassword: '',
-    });
   }
 
   render() {
@@ -101,7 +98,7 @@ class SignupForm extends Component {
           />
         </div>
         <button type="submit" className="btn btn-primary">
-          Submit
+          Sign Up
         </button>
       </form>
     );
