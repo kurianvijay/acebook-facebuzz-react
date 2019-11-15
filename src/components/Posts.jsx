@@ -24,20 +24,9 @@ class Posts extends React.Component {
         method: 'GET',
       }
     )
-      .then(
-        response => {
-          console.log(response)
-          return response.json()
-        }
-      )
-      .then(
-        data => {
-          console.log(data)
-          this.setState({
-            feed: data
-          })
-        }
-      )
+    .then(response => return response.json())
+    .then(data => this.setState({ feed: data }))
+
   }
 
   componentDidMount() {
@@ -54,7 +43,7 @@ class Posts extends React.Component {
               id={post.id}
               author={post.user_id}
               body={post.message}
-              timestamp='14 November 2019 11am'
+              timestamp={post.created_at}
               likes='0'
             />
           ))

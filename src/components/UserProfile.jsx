@@ -11,7 +11,7 @@ class UserProfile extends Component {
 
   render() {
     return (
-      <div classNameName="UserProfileWrapper">
+      <div className="UserProfileWrapper">
         <div
           className="card mb-5"
           style={{ width: "18rem", backgroundColor: "#eeeeee", border: "none" }}
